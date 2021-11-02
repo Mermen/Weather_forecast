@@ -1,5 +1,6 @@
 package com.example.weather_forecast
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private var city_field: EditText?=null;
     private var get_btn: Button?=null;
     private var result_info: TextView?=null;
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -55,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                     if (jsonarr.getJSONObject(i).getString("name")==city){
                         lat_city = jsonarr.getJSONObject(i).getJSONObject("coord").getString("lat")
                         lon_city = jsonarr.getJSONObject(i).getJSONObject("coord").getString("lon")
-                        result_info?.setText(city+"\n"+lon_city+"\n"+lat_city)
+
                     }
                 }
                 var key: String = "b0f46f2f935e1c912c9e693692209b34"
@@ -63,7 +65,10 @@ class MainActivity : AppCompatActivity() {
 
                 doAsync{
                     val apiResp = URL(url).readText()
-
+                    val weather = JSONObject(apiResp).getJSONObject("current").getJSONArray("weather")
+                    val desc = weather.getJSONObject(0).getString("description")
+                    val temp = JSONObject(apiResp).getJSONObject("current").getString("temp")
+                    result_info?.text = "Temperature: $temp°C \n $desc"
                 }
             }
         }

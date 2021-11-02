@@ -3,7 +3,6 @@ package com.example.weather_forecast
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,19 +10,16 @@ import android.widget.Toast
 import org.jetbrains.anko.doAsync
 import org.json.JSONObject
 
-import java.io.FileInputStream
-
 import java.io.InputStream
 
-import java.io.File
 import org.json.JSONArray
 
-import java.io.FileReader
 import java.net.URL
 
 
 class MainActivity : AppCompatActivity() {
 
+    private var country_field: EditText?=null;
     private var city_field: EditText?=null;
     private var get_btn: Button?=null;
     private var result_info: TextView?=null;
@@ -32,15 +28,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val inputStream: InputStream = assets.open("citylistmin.json")
-        var json: String?= null
-        json = inputStream.bufferedReader().use { it.readText() }
+        var inputStream: InputStream = assets.open("citylistmin.json")
+        var json_city: String?= null
+        json_city = inputStream.bufferedReader().use { it.readText() }
 
-        var jsonarr = JSONArray(json)
-
-
+        var citiesArray = JSONArray(json_city)
 
 
+        inputStream = assets.open("countriesmin.json")
+        var json_countries: String?= null
+        json_countries = inputStream.bufferedReader().use { it.readText() }
+
+        var countriesArray = JSONArray(json_countries)
+
+
+
+        country_field = findViewById(R.id.Country)
         city_field = findViewById(R.id.City)
         get_btn = findViewById(R.id.get_weather_btn)
         result_info = findViewById(R.id.result_info)
@@ -49,27 +52,52 @@ class MainActivity : AppCompatActivity() {
             if (city_field?.text?.toString()?.trim()?.equals("")!!) {
                 Toast.makeText(this,"Set City", Toast.LENGTH_LONG).show()
             }
+            else if (country_field?.text?.toString()?.trim()?.equals("")!!) {
+                Toast.makeText(this,"Set Country", Toast.LENGTH_LONG).show()
+            }
             else {
+                var check = 0;
+                var country: String = country_field?.text.toString()
+                var country_ID: String ="";
+                for (i in 0 until countriesArray.length()){
+                    if (countriesArray.getJSONObject(i).getString("name")==country){
+                        country_ID =countriesArray.getJSONObject(i).getString("alpha-2")
+                        check+=1
+                    }
+                }
                 var city: String = city_field?.text.toString()
                 var lat_city: String =""
                 var lon_city: String =""
-                for (i in 0 until jsonarr.length()){
-                    if (jsonarr.getJSONObject(i).getString("name")==city){
-                        lat_city = jsonarr.getJSONObject(i).getJSONObject("coord").getString("lat")
-                        lon_city = jsonarr.getJSONObject(i).getJSONObject("coord").getString("lon")
-
+                for (i in 0 until citiesArray.length()){
+                    if (citiesArray.getJSONObject(i).getString("name")==city&&citiesArray.getJSONObject(i).getString("country")==country_ID){
+                        lat_city = citiesArray.getJSONObject(i).getJSONObject("coord").getString("lat")
+                        lon_city = citiesArray.getJSONObject(i).getJSONObject("coord").getString("lon")
+                        check+=2
                     }
                 }
                 var key: String = "b0f46f2f935e1c912c9e693692209b34"
                 var url: String = "https://api.openweathermap.org/data/2.5/onecall?lat=$lat_city&lon=$lon_city&exclude=daily&appid=$key&units=metric"
-
-                doAsync{
-                    val apiResp = URL(url).readText()
-                    val weather = JSONObject(apiResp).getJSONObject("current").getJSONArray("weather")
-                    val desc = weather.getJSONObject(0).getString("description")
-                    val temp = JSONObject(apiResp).getJSONObject("current").getString("temp")
-                    result_info?.text = "Temperature: $temp°C \n $desc"
+                when(check){
+                    2->{
+                        Toast.makeText(this,"Wrong Country", Toast.LENGTH_LONG).show()
+                    }
+                    1->{
+                    Toast.makeText(this,"Wrong City", Toast.LENGTH_LONG).show()
+                    }
+                    0->{
+                        Toast.makeText(this,"Wrong Country and City", Toast.LENGTH_LONG).show()
+                    }
+                    else->{
+                        doAsync{
+                            val apiResp = URL(url).readText()
+                            val weather = JSONObject(apiResp).getJSONObject("current").getJSONArray("weather")
+                            val desc = weather.getJSONObject(0).getString("description")
+                            val temp = JSONObject(apiResp).getJSONObject("current").getString("temp")
+                            result_info?.text = "Temperature: $temp°C \n $desc"
+                        }
+                    }
                 }
+
             }
         }
     }

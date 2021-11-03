@@ -3,7 +3,6 @@ package com.example.weather_forecast
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.doAsync
@@ -24,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     private var get_btn: Button?=null;
     private var result_info: TextView?=null;
     private var img_weather: ImageView?=null;
+    private var img_tmp: ImageView?=null;
+    private var text_tmp: TextView?=null;
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,12 +43,21 @@ class MainActivity : AppCompatActivity() {
 
         var countriesArray = JSONArray(json_countries)
 
+        val date_formater_hourly = java.text.SimpleDateFormat("dd.MM' 'HH:mm")
 
-
+        val date_formater_daily = java.text.SimpleDateFormat("dd.MM")
+        /*
+        val date = java.util.Date(1532358895 * 1000)
+        val asd: String = sdf.format(date)
+        */
         country_field = findViewById(R.id.Country)
         city_field = findViewById(R.id.City)
         get_btn = findViewById(R.id.get_weather_btn)
         result_info = findViewById(R.id.result_info)
+        /*
+        val viewId = resources.getIdentifier("image_weather", "id", packageName)
+        img_weather = findViewById(viewId)
+        */
         img_weather = findViewById(R.id.image_weather)
         get_btn?.setOnClickListener {
             if (city_field?.text?.toString()?.trim()?.equals("")!!) {
@@ -77,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 var key: String = "b0f46f2f935e1c912c9e693692209b34"
-                var url: String = "https://api.openweathermap.org/data/2.5/onecall?lat=$lat_city&lon=$lon_city&exclude=daily&appid=$key&units=metric"
+                var url: String = "https://api.openweathermap.org/data/2.5/onecall?lat=$lat_city&lon=$lon_city&exclude=minutely,alerts&appid=$key&units=metric"
 
                 when(check){
                     2->{
@@ -95,12 +105,80 @@ class MainActivity : AppCompatActivity() {
                             val weather = JSONObject(apiResp).getJSONObject("current").getJSONArray("weather")
                             val desc = weather.getJSONObject(0).getString("description")
                             val temp = JSONObject(apiResp).getJSONObject("current").getString("temp")
-                            val ico =weather.getJSONObject(0).getString("icon")
+                            var ico =weather.getJSONObject(0).getString("icon")
+                            var date_string = JSONObject(apiResp).getJSONObject("current").getString("dt")
+
+                            val weather_hourly = JSONObject(apiResp).getJSONArray("hourly")
+                            val icoArray_hourly = arrayOfNulls<String>(48)
+                            val timeArray_hourly = arrayOfNulls<String>(48)
+                            val tempArray_hourly = arrayOfNulls<String>(48)
+                            val descArray_hourly = arrayOfNulls<String>(48)
+
+                            val weather_daily = JSONObject(apiResp).getJSONArray("daily")
+                            val icoArray_daily = arrayOfNulls<String>(8)
+                            val timeArray_daily = arrayOfNulls<String>(8)
+                            val tempArray_daily = arrayOfNulls<String>(8)
+                            val descArray_daily = arrayOfNulls<String>(8)
+
+                            for (i in 0 until weather_hourly.length()){
+                                icoArray_hourly[i]=weather_hourly.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("icon")
+                                timeArray_hourly[i]=weather_hourly.getJSONObject(i).getString("dt")
+                                tempArray_hourly[i]=weather_hourly.getJSONObject(i).getString("temp")
+                                descArray_hourly[i]=weather_hourly.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description")
+
+                            }
+                            for (i in 0 until weather_daily.length()){
+                                icoArray_daily[i]=weather_daily.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("icon")
+                                timeArray_daily[i]=weather_daily.getJSONObject(i).getString("dt")
+                                tempArray_daily[i]=weather_daily.getJSONObject(i).getJSONObject("temp").getString("day")
+                                descArray_daily[i]=weather_daily.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description")
+
+                            }
                             uiThread{
                             var url_ico: String = "https://openweathermap.org/img/wn/$ico@4x.png"
-                            Picasso.get().load(url_ico).into(img_weather);
+                            Picasso.get().load(url_ico).into(img_weather)
+                            for(i in 0 until icoArray_hourly.size) {
+                                ico = icoArray_hourly[i]
+                                url_ico = "https://openweathermap.org/img/wn/$ico@4x.png"
+                                val viewId =
+                                    resources.getIdentifier("imageView0$i", "id", packageName)
+                                img_tmp = findViewById(viewId)
+                                Picasso.get().load(url_ico).into(img_tmp)
                             }
-                            result_info?.text = "Temperature: $temp°C \n $desc"
+                                for(i in 0 until icoArray_daily.size){
+                                    ico = icoArray_daily[i]
+                                    url_ico = "https://openweathermap.org/img/wn/$ico@4x.png"
+                                    val viewId = resources.getIdentifier("imageView1$i", "id", packageName)
+                                    img_tmp = findViewById(viewId)
+                                    Picasso.get().load(url_ico).into(img_tmp)
+                                }
+                            }
+
+                            result_info?.text = "Current Weather\nTemperature: $temp°C\n$desc"
+                            for(i in 0 until timeArray_hourly.size){
+                                date_string = timeArray_hourly[i]
+                                val date_int = date_string.toLong()
+                                val date = java.util.Date(date_int * 1000)
+                                val string_time: String = date_formater_hourly.format(date)
+                                val temp = tempArray_hourly[i]
+                                val desc = descArray_hourly[i]
+                                val viewId = resources.getIdentifier("textView0$i", "id", packageName)
+                                text_tmp = findViewById(viewId)
+                                text_tmp?.text = "Date: $string_time\nTemp: $temp°C\n$desc"
+
+                            }
+                            for(i in 0 until timeArray_daily.size){
+                                date_string = timeArray_daily[i]
+                                val date_int = date_string.toLong()
+                                val date = java.util.Date(date_int * 1000)
+                                val string_time: String = date_formater_daily.format(date)
+                                val temp = tempArray_daily[i]
+                                val desc = descArray_daily[i]
+                                val viewId = resources.getIdentifier("textView1$i", "id", packageName)
+                                text_tmp = findViewById(viewId)
+                                text_tmp?.text = "Date: $string_time\nTemp: $temp°C\n$desc"
+
+                            }
                         }
 
 

@@ -10,11 +10,11 @@
         android:id="@+id/get_weather_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="8dp"
         android:text="Get\nWeather "
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/City" />
 
@@ -22,24 +22,25 @@
         android:id="@+id/City"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="Moscow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Country" />
 
     <TextView
         android:id="@+id/result_info"
-        android:layout_width="216dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="188dp"
+        android:layout_width="255dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="80dp"
         android:gravity="center"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/get_weather_btn" />
 
@@ -47,23 +48,964 @@
         android:id="@+id/Country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="Russian Federation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image_weather"
-        android:layout_width="119dp"
-        android:layout_height="129dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toTopOf="@+id/result_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/get_weather_btn"
         app:srcCompat="@drawable/weather_ico" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/result_info"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="272dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <HorizontalScrollView
+                android:id="@+id/HorizontalScrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView00"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView00"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView00"
+                        app:layout_constraintTop_toBottomOf="@+id/textView00"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView01"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView00"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView01"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView01"
+                        app:layout_constraintTop_toBottomOf="@+id/textView01"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView02"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView01"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView02"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView02"
+                        app:layout_constraintTop_toBottomOf="@+id/textView02"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView03"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView02"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView03"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView03"
+                        app:layout_constraintTop_toBottomOf="@+id/textView03"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView04"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView03"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView04"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView04"
+                        app:layout_constraintTop_toBottomOf="@+id/textView04"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView05"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView04"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView05"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView05"
+                        app:layout_constraintTop_toBottomOf="@+id/textView05"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView06"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView05"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView06"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView06"
+                        app:layout_constraintTop_toBottomOf="@+id/textView06"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView07"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView06"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView07"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView07"
+                        app:layout_constraintTop_toBottomOf="@+id/textView07"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView08"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView07"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView08"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView08"
+                        app:layout_constraintTop_toBottomOf="@+id/textView08"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView09"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView08"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView09"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView09"
+                        app:layout_constraintTop_toBottomOf="@+id/textView09"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView010"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView09"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView010"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView010"
+                        app:layout_constraintTop_toBottomOf="@+id/textView010"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView011"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView010"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView011"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView011"
+                        app:layout_constraintTop_toBottomOf="@+id/textView011"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView012"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView011"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView012"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView012"
+                        app:layout_constraintTop_toBottomOf="@+id/textView012"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView013"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView012"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView013"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView013"
+                        app:layout_constraintTop_toBottomOf="@+id/textView013"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView014"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView013"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView014"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView014"
+                        app:layout_constraintTop_toBottomOf="@+id/textView014"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView015"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView014"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView015"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView015"
+                        app:layout_constraintTop_toBottomOf="@+id/textView015"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView016"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView015"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView016"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView016"
+                        app:layout_constraintTop_toBottomOf="@+id/textView016"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView017"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView016"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView017"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView017"
+                        app:layout_constraintTop_toBottomOf="@+id/textView017"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView018"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView017"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView018"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView017"
+                        app:layout_constraintTop_toBottomOf="@+id/textView017"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView019"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView018"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView019"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView019"
+                        app:layout_constraintTop_toBottomOf="@+id/textView019"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView020"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView019"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView020"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView020"
+                        app:layout_constraintTop_toBottomOf="@+id/textView020"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView021"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView020"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView021"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView021"
+                        app:layout_constraintTop_toBottomOf="@+id/textView021"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView022"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView021"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView022"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView022"
+                        app:layout_constraintTop_toBottomOf="@+id/textView022"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView023"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView022"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView023"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView023"
+                        app:layout_constraintTop_toBottomOf="@+id/textView023"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView024"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView023"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView024"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView024"
+                        app:layout_constraintTop_toBottomOf="@+id/textView024"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView025"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView024"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView025"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView025"
+                        app:layout_constraintTop_toBottomOf="@+id/textView025"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView026"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView025"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView026"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView026"
+                        app:layout_constraintTop_toBottomOf="@+id/textView026"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView027"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView026"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView027"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView027"
+                        app:layout_constraintTop_toBottomOf="@+id/textView027"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView028"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView027"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView028"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView028"
+                        app:layout_constraintTop_toBottomOf="@+id/textView028"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView029"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView028"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView029"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView029"
+                        app:layout_constraintTop_toBottomOf="@+id/textView029"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView030"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView029"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView030"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView030"
+                        app:layout_constraintTop_toBottomOf="@+id/textView030"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView031"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView030"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView031"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView031"
+                        app:layout_constraintTop_toBottomOf="@+id/textView031"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView032"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView031"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView032"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView032"
+                        app:layout_constraintTop_toBottomOf="@+id/textView032"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView033"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView032"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView033"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView033"
+                        app:layout_constraintTop_toBottomOf="@+id/textView033"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView034"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView033"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView034"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView034"
+                        app:layout_constraintTop_toBottomOf="@+id/textView034"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView035"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView034"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView035"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView035"
+                        app:layout_constraintTop_toBottomOf="@+id/textView035"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView036"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView035"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView036"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView036"
+                        app:layout_constraintTop_toBottomOf="@+id/textView036"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView037"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView036"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView037"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView037"
+                        app:layout_constraintTop_toBottomOf="@+id/textView037"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView038"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView037"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView038"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView038"
+                        app:layout_constraintTop_toBottomOf="@+id/textView038"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView039"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView038"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView039"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView039"
+                        app:layout_constraintTop_toBottomOf="@+id/textView039"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView040"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView039"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView040"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView040"
+                        app:layout_constraintTop_toBottomOf="@+id/textView040"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView041"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView040"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView041"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView041"
+                        app:layout_constraintTop_toBottomOf="@+id/textView041"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView042"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView041"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView042"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView042"
+                        app:layout_constraintTop_toBottomOf="@+id/textView042"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView043"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView042"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView043"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView043"
+                        app:layout_constraintTop_toBottomOf="@+id/textView043"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView044"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView043"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView044"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView044"
+                        app:layout_constraintTop_toBottomOf="@+id/textView044"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView045"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView044"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView045"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView045"
+                        app:layout_constraintTop_toBottomOf="@+id/textView045"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView046"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView045"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView046"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView046"
+                        app:layout_constraintTop_toBottomOf="@+id/textView046"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView047"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView046"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView047"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView047"
+                        app:layout_constraintTop_toBottomOf="@+id/textView047"
+                        app:srcCompat="@drawable/weather_ico" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:id="@+id/HorizontalScrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/HorizontalScrollView1"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView10"
+                        app:layout_constraintTop_toBottomOf="@+id/textView10"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView10"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView11"
+                        app:layout_constraintTop_toBottomOf="@+id/textView11"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView11"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView12"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView12"
+                        app:layout_constraintTop_toBottomOf="@+id/textView12"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView12"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView13"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView13"
+                        app:layout_constraintTop_toBottomOf="@+id/textView13"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView13"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView14"
+                        app:layout_constraintTop_toBottomOf="@+id/textView14"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView14"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView15"
+                        app:layout_constraintTop_toBottomOf="@+id/textView15"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView15"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView16"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16"
+                        app:srcCompat="@drawable/weather_ico" />
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="128dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView16"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="52dp"
+                        android:text="TextView\n123 C" />
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="128dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="-20dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView17"
+                        app:layout_constraintTop_toBottomOf="@+id/textView17"
+                        app:srcCompat="@drawable/weather_ico" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

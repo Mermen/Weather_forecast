@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Get\nWeather "
+        android:text="Get\nWeather"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/City" />
 
@@ -99,7 +99,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView00"
@@ -115,7 +115,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView00"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView01"
@@ -131,7 +131,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView01"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView02"
@@ -147,7 +147,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView02"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView03"
@@ -163,7 +163,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView03"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView04"
@@ -179,7 +179,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView04"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView05"
@@ -195,7 +195,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView05"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView06"
@@ -211,7 +211,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView06"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView07"
@@ -227,7 +227,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView07"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView08"
@@ -243,7 +243,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView08"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView09"
@@ -259,7 +259,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView09"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView010"
@@ -275,7 +275,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView010"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView011"
@@ -291,7 +291,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView011"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView012"
@@ -307,7 +307,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView012"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView013"
@@ -323,7 +323,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView013"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView014"
@@ -339,7 +339,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView014"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView015"
@@ -355,7 +355,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView015"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView016"
@@ -371,7 +371,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView016"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView017"
@@ -387,7 +387,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView017"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView018"
@@ -403,7 +403,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView018"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView019"
@@ -419,7 +419,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView019"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView020"
@@ -435,7 +435,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView020"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView021"
@@ -451,7 +451,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView021"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView022"
@@ -467,7 +467,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView022"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView023"
@@ -483,7 +483,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView023"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView024"
@@ -499,7 +499,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView024"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView025"
@@ -515,7 +515,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView025"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView026"
@@ -531,7 +531,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView026"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView027"
@@ -547,7 +547,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView027"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView028"
@@ -563,7 +563,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView028"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView029"
@@ -579,7 +579,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView029"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView030"
@@ -595,7 +595,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView030"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView031"
@@ -611,7 +611,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView031"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView032"
@@ -627,7 +627,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView032"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView033"
@@ -643,7 +643,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView033"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView034"
@@ -659,7 +659,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView034"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView035"
@@ -675,7 +675,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView035"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView036"
@@ -691,7 +691,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView036"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView037"
@@ -707,7 +707,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView037"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView038"
@@ -723,7 +723,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView038"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView039"
@@ -739,7 +739,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView039"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView040"
@@ -755,7 +755,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView040"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView041"
@@ -771,7 +771,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView041"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView042"
@@ -787,7 +787,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView042"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView043"
@@ -803,7 +803,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView043"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView044"
@@ -819,7 +819,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView044"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView045"
@@ -835,7 +835,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView045"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView046"
@@ -851,7 +851,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView046"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView047"
@@ -881,7 +881,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView10"
@@ -897,7 +897,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView10"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView11"
@@ -913,7 +913,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView11"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView12"
@@ -929,7 +929,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView12"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView13"
@@ -945,7 +945,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView13"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView14"
@@ -961,7 +961,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView14"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView15"
@@ -977,7 +977,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView15"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView16"
@@ -993,7 +993,7 @@
                         app:layout_constraintStart_toEndOf="@+id/textView16"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="52dp"
-                        android:text="TextView\n123 C" />
+                        android:text="Date: --:--\nTemp: --°C\n--" />
 
                     <ImageView
                         android:id="@+id/imageView17"
@@ -1007,5 +1007,17 @@
             </HorizontalScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/set_current_city_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Set\nCurrent City"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/City" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

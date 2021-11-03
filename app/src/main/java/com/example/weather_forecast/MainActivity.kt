@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
     private var img_weather: ImageView?=null;
     private var img_tmp: ImageView?=null;
     private var text_tmp: TextView?=null;
+
+    var check_loc = false
+    var lat_check =0.0
+    var lon_check =0.0
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,20 +74,23 @@ class MainActivity : AppCompatActivity() {
         val viewId = resources.getIdentifier("image_weather", "id", packageName)
         img_weather = findViewById(viewId)
         */
-
         img_weather = findViewById(R.id.image_weather)
         set_btn?.setOnClickListener{
 
             fetchLocation(citiesArray)
+
         }
         get_btn?.setOnClickListener {
             get_Weather(countriesArray, citiesArray, date_formater_hourly, date_formater_daily)
+
         }
 
     }
 
     private fun fetchLocation(citiesArray: JSONArray) {
+
         val task = fusedLocationProviderClient.lastLocation
+
         if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED && ActivityCompat
                 .checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -114,7 +121,12 @@ class MainActivity : AppCompatActivity() {
                             lon =
                                 citiesArray.getJSONObject(i).getJSONObject("coord").getString("lon")
                                     .toDouble()
+                            lon_check = citiesArray.getJSONObject(i).getJSONObject("coord").getString("lon")
+                                .toDouble()
                             lat =
+                                citiesArray.getJSONObject(i).getJSONObject("coord").getString("lat")
+                                    .toDouble()
+                            lat_check =
                                 citiesArray.getJSONObject(i).getJSONObject("coord").getString("lat")
                                     .toDouble()
                             city_name = citiesArray.getJSONObject(i).getString("name")
@@ -124,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
                 //Toast.makeText(this,  lat.toString()+" "+lon.toString(), Toast.LENGTH_LONG).show()
                 city_field?.setText(city_name)
-
+                check_loc = true
             }
         }
     }
@@ -147,7 +159,7 @@ class MainActivity : AppCompatActivity() {
         countriesArray: JSONArray,
         citiesArray: JSONArray,
         date_formater_hourly: SimpleDateFormat,
-        date_formater_daily: SimpleDateFormat
+        date_formater_daily: SimpleDateFormat,
     ) {
         if (city_field?.text?.toString()?.trim()?.equals("")!!) {
             Toast.makeText(this, "Set City", Toast.LENGTH_LONG).show()
@@ -176,6 +188,12 @@ class MainActivity : AppCompatActivity() {
                     check += 2
                 }
             }
+            if(check_loc){
+                check_loc = false
+                lat_city = lat_check.toString()
+                lon_city = lon_check.toString()
+            }
+            //Toast.makeText(this,  lat_city.toString()+" "+lon_city.toString(), Toast.LENGTH_LONG).show()
             var key: String = "b0f46f2f935e1c912c9e693692209b34"
             var url: String =
                 "https://api.openweathermap.org/data/2.5/onecall?lat=$lat_city&lon=$lon_city&exclude=minutely,alerts&appid=$key&units=metric"

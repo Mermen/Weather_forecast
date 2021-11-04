@@ -75,6 +75,8 @@ class MainActivity : AppCompatActivity() {
         img_weather = findViewById(viewId)
         */
         img_weather = findViewById(R.id.image_weather)
+        fetchLocation(citiesArray)
+        get_Weather(countriesArray, citiesArray, date_formater_hourly, date_formater_daily)
         set_btn?.setOnClickListener{
 
             fetchLocation(citiesArray)

@@ -26,14 +26,14 @@ import kotlin.math.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
-    private var country_field: EditText?=null;
-    private var city_field: EditText?=null;
-    private var get_btn: Button?=null;
-    private var set_btn: Button?=null;
-    private var result_info: TextView?=null;
-    private var img_weather: ImageView?=null;
-    private var img_tmp: ImageView?=null;
-    private var text_tmp: TextView?=null;
+    private var country_field: EditText?=null
+    private var city_field: EditText?=null
+    private var get_btn: Button?=null
+    private var set_btn: Button?=null
+    private var result_info: TextView?=null
+    private var img_weather: ImageView?=null
+    private var img_tmp: ImageView?=null
+    private var text_tmp: TextView?=null
 
     var check_loc = false
     var lat_check =0.0
@@ -168,9 +168,9 @@ class MainActivity : AppCompatActivity() {
         } else if (country_field?.text?.toString()?.trim()?.equals("")!!) {
             Toast.makeText(this, "Set Country", Toast.LENGTH_LONG).show()
         } else {
-            var check = 0;
+            var check = 0
             var country: String = country_field?.text.toString()
-            var country_ID: String = "";
+            var country_ID: String = ""
             for (i in 0 until countriesArray.length()) {
                 if (countriesArray.getJSONObject(i).getString("name") == country) {
                     country_ID = countriesArray.getJSONObject(i).getString("alpha-2")

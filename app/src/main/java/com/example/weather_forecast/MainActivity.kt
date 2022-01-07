@@ -260,7 +260,7 @@ class MainActivity : AppCompatActivity() {
                         uiThread {
                             var url_ico: String = "https://openweathermap.org/img/wn/$ico@4x.png"
                             Picasso.get().load(url_ico).into(img_weather)
-                            for (i in 0 until icoArray_hourly.size) {
+                            for (i in icoArray_hourly.indices) {
                                 ico = icoArray_hourly[i]
                                 url_ico = "https://openweathermap.org/img/wn/$ico@4x.png"
                                 val viewId =
@@ -268,7 +268,7 @@ class MainActivity : AppCompatActivity() {
                                 img_tmp = findViewById(viewId)
                                 Picasso.get().load(url_ico).into(img_tmp)
                             }
-                            for (i in 0 until icoArray_daily.size) {
+                            for (i in icoArray_daily.indices) {
                                 ico = icoArray_daily[i]
                                 url_ico = "https://openweathermap.org/img/wn/$ico@4x.png"
                                 val viewId =
@@ -279,7 +279,7 @@ class MainActivity : AppCompatActivity() {
                         }
 
                         result_info?.text = "Current Weather\nTemperature: $temp°C\n$desc"
-                        for (i in 0 until timeArray_hourly.size) {
+                        for (i in timeArray_hourly.indices) {
                             date_string = timeArray_hourly[i]
                             val date_int = date_string.toLong()
                             val date = Date(date_int * 1000)
@@ -291,7 +291,7 @@ class MainActivity : AppCompatActivity() {
                             text_tmp?.text = "Date: $string_time\nTemp: $temp°C\n$desc"
 
                         }
-                        for (i in 0 until timeArray_daily.size) {
+                        for (i in timeArray_daily.indices) {
                             date_string = timeArray_daily[i]
                             val date_int = date_string.toLong()
                             val date = Date(date_int * 1000)
